@@ -1,0 +1,72 @@
+body {
+    background-color: lightblue;
+}
+h1 {
+    color: darkblue;
+    font-family: Verdana;
+}
+
+h4 {
+    font-family: Verdana;
+    margin-top: 0rem;;
+}
+
+p, label {
+    font-family: Tahoma;
+}
+
+label {
+    padding: 0.5rem;
+}
+
+input {
+    width: 6rem;
+}
+
+button {
+    border: 0;
+    background-color: darkblue;
+    color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: normal;
+    border-radius: 10px;
+  }
+  button:hover {
+    background-color: #e7cbb0;
+    color: darkblue;
+    box-shadow: 0 0 0 1px darkblue;
+  }
+
+
+#content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    margin-top: 0rem;
+}
+
+#results {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}

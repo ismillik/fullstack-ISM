@@ -17,7 +17,13 @@ const cuisineIdFinder = (str) => {
 
 
 //search function 
-const search = (name, rating, distance, price, cuisine_id) => {
+const search = (criteria) => {
+    //handle input object
+    const name = (criteria.name === '') ? undefined : criteria.name;
+    const rating = (criteria.rating === '') ? undefined : Number(criteria.rating);
+    const distance = (criteria.distance === '') ? undefined : Number(criteria.distance);
+    const price = (criteria.price === '') ? undefined : Number(criteria.price);
+    const cuisine_id = (criteria.cuisine === '') ? undefined : cuisineIdFinder(criteria.cuisine);
 
     // handle invalid inputs
     if ((typeof name !== 'string' && typeof name !== 'undefined') ||
@@ -27,8 +33,13 @@ const search = (name, rating, distance, price, cuisine_id) => {
         ) {
         return 'Invalid input';
     };
+
+    if (cuisine_id === 'Invalid Cuisine type') {
+        return 'Invalid Cuisine type';
+    };
+    
     if (name === undefined && rating === undefined && distance === undefined && price === undefined && cuisine_id === undefined) {
-        return 'No search criteria found';
+        return 'No search criteria found. Try again!';
     };
 
     // search for results
@@ -67,16 +78,13 @@ const search = (name, rating, distance, price, cuisine_id) => {
     if (results.length > 5) {
         results = results.slice(0,5);
     };
-
+    if (results.length === 0) {
+        results = 'Your search yielded no results. Try again!'
+    }
     // return results
     return results;
 
 }
 
-module.exports = { cuisineIdFinder, search };
+module.exports = { search };
 
-// console.log('THIS IS THE TEST! ---------->', 
-//     search(undefined, undefined, undefined, undefined, '12'));
-
-// console.log('THIS IS ANOTHER TEST ------>', cuisineIdFinder('Thai'));
-// console.log(typeof cuisineIdFinder('Thai'))

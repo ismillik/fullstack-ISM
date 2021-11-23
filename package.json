@@ -2,13 +2,28 @@
   "name": "fullstack-ism",
   "version": "1.0.0",
   "description": "",
-  "main": "data.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js & data.js",
+    "build": "webpack",
+    "build:dev": "npm run build -- --watch --mode=development",
+    "start:dev": "npm run build:dev & data.js & nodemon server.js --ignore public/ --ignore client/"
   },
   "author": "Ian Sturges Milliken",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
+    "express": "^4.17.1",
     "papaparse": "^5.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1"
   }
 }
