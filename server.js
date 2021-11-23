@@ -27,7 +27,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.post('/api/search', (req, res, next) => {
     try {
         const results = search(req.body);
+        // uncomment the line below to see the raw results of your search in the console
+        // console.log(results)
         res.send(results);
+
     }
     catch(err) {
         next(err)
