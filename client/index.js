@@ -57,7 +57,7 @@ class Main extends React.Component {
                     <h4>Let's set some criteria. All fields optional.</h4>
                     <div id= 'form'>
                         <form onSubmit= {handleSubmit}>
-                            <div>
+                            <div id='inputs'>
                                 <label name='name'>Restaurant Name:</label>
                                 <input 
                                     id='name'
